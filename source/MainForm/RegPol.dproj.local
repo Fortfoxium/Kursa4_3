@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.358,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Main.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,D:\kp19is2\source\MainForm\Main.dfm=D:\kp19is2\source\MainForm\MainFr.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.883,D:\kp19is2\source\MainForm\RegPol.dproj=D:\kp19is2\source\MainForm\Main.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.640,=D:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.390,=D:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.333,=F:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.419,=F:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.218,F:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.686,F:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.491,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Main.dfm=D:\kp19is2\source\MainForm\Main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.596,=D:\kp19is2\source\DLLofUSERS\Register\FrmRegister.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.617,=D:\kp19is2\source\Table\All.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.934,D:\kp19is2\source\Table\All.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.601,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Main.dproj=D:\kp19is2\source\MainForm\Main.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.733,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Unit3.dfm=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.371,D:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.491,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Main.pas=D:\kp19is2\source\MainForm\Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,D:\kp19is2\source\MainForm\Main.pas=D:\kp19is2\source\MainForm\MainFr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.733,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Unit3.pas=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.747,=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\source"/>
+    <File Path="..\DLLofUSERS"/>
+    <File Path="..\DLLofUSERS\Login"/>
+    <File Path="..\DLLofUSERS\Login\FrmLogin.pas"/>
+    <File Path="..\DLLofUSERS\Login\FrmLogin.dfm"/>
+    <File Path="..\DLLofUSERS\Register"/>
+    <File Path="..\DLLofUSERS\Register\FrmRegister.pas"/>
+    <File Path="..\DLLofUSERS\Register\FrmRegister.dfm"/>
+    <File Path="MainFr.pas"/>
+    <File Path="MainFr.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

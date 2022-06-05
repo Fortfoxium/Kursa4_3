@@ -1,0 +1,43 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Menus,
+  ShareMem;
+
+type
+  TMainfrm = class(TForm)
+    MainMenu1: TMainMenu;
+    Info: TMenuItem;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    procedure N2Click(Sender: TObject);
+  private
+
+  public
+
+  end;
+
+var
+  Mainfrm: TMainfrm;
+
+implementation
+ procedure openLogin (Aowner :Tcomponent) ; external 'DLLUSER.dll' ;
+{$R *.dfm}
+
+procedure TMainfrm.N2Click(Sender: TObject);
+begin
+openLogin(self);
+end;
+
+end.

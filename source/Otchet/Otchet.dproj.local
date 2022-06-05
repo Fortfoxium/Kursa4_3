@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.895,=F:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.671,=F:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.237,=F:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.336,=F:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.010,F:\kp19is2\source\Table\frmTable.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.720,=F:\kp19is2\source\Table\frmTable.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.168,D:\kp19is2\source\Otchet\TableTalon.pas=D:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.406,F:\kp19is2\source\Otchet\Unit1.pas=F:\kp19is2\source\Otchet\Talon\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.260,=D:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.006,F:\kp19is2\source\Otchet\Talon\Unit1.pas=F:\kp19is2\source\Otchet\Talon\NewTalon.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.491,D:\kp19is2\source\Otchet\Talon\Frmtalon.pas=D:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.990,=D:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.854,F:\kp19is2\source\Otchet\Unit1.pas=F:\kp19is2\source\Otchet\Talon\FrmNewPacient.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.108,F:\kp19is2\source\Otchet\Unit1.pas=F:\kp19is2\source\Otchet\all.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.987,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Otchet.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.496,F:\kp19is2\source\Otchet\PacientsColvo\frmColPacient.pas=F:\kp19is2\source\Otchet\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.882,F:\kp19is2\source\Otchet\allу.pas=F:\kp19is2\source\Otchet\ally.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.347,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Otchet.dproj=D:\kp19is2\source\Otchet\Otchet.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.006,F:\kp19is2\source\Otchet\Talon\Unit1.dfm=F:\kp19is2\source\Otchet\Talon\NewTalon.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.402,=F:\kp19is2\source\Otchet\WordLib.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.245,F:\kp19is2\source\Otchet\WordLib.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.491,D:\kp19is2\source\Otchet\Talon\Frmtalon.dfm=D:\kp19is2\source\Otchet\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.854,F:\kp19is2\source\Otchet\Unit1.dfm=F:\kp19is2\source\Otchet\Talon\FrmNewPacient.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.938,F:\kp19is2\source\Table\All.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.217,=F:\kp19is2\source\Table\All.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.496,F:\kp19is2\source\Otchet\PacientsColvo\frmColPacient.dfm=F:\kp19is2\source\Otchet\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.507,D:\kp19is2\source\Otchet\PacientsColvo\frmColPacient.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.406,F:\kp19is2\source\Otchet\Unit1.dfm=F:\kp19is2\source\Otchet\Talon\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.168,D:\kp19is2\source\Otchet\TableTalon.dfm=D:\kp19is2\source\Otchet\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.634,F:\kp19is2\source\Otchet\all.pas=F:\kp19is2\source\Otchet\allу.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Talon"/>
+    <File Path="Talon\FrmNewPacient.pas"/>
+    <File Path="Talon\FrmNewPacient.dfm"/>
+    <File Path="Talon\Frmtalon.pas"/>
+    <File Path="Talon\Frmtalon.dfm"/>
+    <File Path="Talon\NewTalon.pas"/>
+    <File Path="Talon\NewTalon.dfm"/>
+    <File Path="ally.pas"/>
+    <File Path="TableTalon.pas"/>
+    <File Path="TableTalon.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

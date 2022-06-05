@@ -1,0 +1,76 @@
+unit FrmRegister;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.IB,
+  FireDAC.Phys.IBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.Client, Data.DB,
+  FireDAC.Comp.DataSet, Vcl.StdCtrls, inifiles;
+
+type
+  TReg = class(TForm)
+    Startbtn: TButton;
+    Editlogin: TEdit;
+    EditPassword: TEdit;
+    DbConnection: TFDConnection;
+    UsersTable: TFDQuery;
+    FDTransaction1: TFDTransaction;
+    FDManager1: TFDManager;
+    FDQuery1: TFDQuery;
+    procedure FormCreate(Sender: TObject);
+    procedure StartbtnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Login:string;
+    Password:string;
+  end;
+
+var
+  Reg: TReg;
+ini:tinifile;
+implementation
+
+{$R *.dfm}
+
+procedure TReg.FormCreate(Sender: TObject);
+begin
+FDManager.ConnectionDefFileName:='FDConnectionDefs.ini';
+ini:=tinifile.create(ExtractFilePath(Paramstr(0))+'config.ini');
+DBConnection.ConnectionString:=(ini.readstring('Settings','Path','Ошибка'));
+DBConnection.Params.add('Protocol=ipTCPIP');
+DBConnection.Params.UserName:='SYSDBA';
+DBConnection.Params.Password:='masterkey';
+DBConnection.Params.Add('Server=127.0.0.1');
+DBConnection.Params.Add('CharacterSet=win1251');
+DBConnection.Params.Add('Port=3050');
+DBConnection.Transaction:=FDTransaction1;
+DBConnection.Connected:=True;
+UsersTable.Transaction:=FDTransaction1;
+FDTransaction1.Connection:=DBConnection;
+UsersTable.Connection:=DBConnection;
+end;
+
+procedure TReg.StartbtnClick(Sender: TObject);
+begin
+if Length(EditLogin.text)=0 then showmessage('Поле логина пустое') else
+if Length(EditPassword.text)=0 then showmessage('Поле пароля пустое') else
+  begin
+    Login:=(EditLogin.text);
+    Password:=EditPassword.text;
+    Userstable.Locate('Login', Login, [loPartialKey]);
+     if not (Login = Userstable.FieldValues['Login']) then
+     begin
+     FDQuery1.SQL.Add('INSERT INTO USERS VALUES (GEN_ID(USERSgen, 1), '+QuotedStr(login)+', '+QuotedStr(password)+');');
+     Showmessage('Вы создали нового пользователя: '+ Login);
+     end
+     else Showmessage('Такой логин уже существует!');
+  end;
+end;
+
+end.

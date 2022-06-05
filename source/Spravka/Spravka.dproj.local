@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.125,D:\kp19is2\source\Spravka\Unit1.pas=D:\kp19is2\source\Spravka\Autors\FrmAutors.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.280,D:\kp19is2\source\Spravka\Unit1.pas=D:\kp19is2\source\Spravka\AboutUs\FrmAbout.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.611,D:\kp19is2\source\Spravka\Spravka.dproj=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.468,=D:\kp19is2\source\Spravka\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.125,D:\kp19is2\source\Spravka\Unit1.dfm=D:\kp19is2\source\Spravka\Autors\FrmAutors.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.280,D:\kp19is2\source\Spravka\Unit1.dfm=D:\kp19is2\source\Spravka\AboutUs\FrmAbout.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.372,=D:\kp19is2\source\Spravka\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

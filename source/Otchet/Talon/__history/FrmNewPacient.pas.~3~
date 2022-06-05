@@ -1,0 +1,129 @@
+unit FrmNewPacient;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.StdCtrls,
+  Data.DB, IBX.IBCustomDataSet, IBX.IBQuery, IBX.IBDatabase;
+
+type
+  TNewPacient = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    ID_PACIENT: TEdit;
+    FNAME: TEdit;
+    NAME: TEdit;
+    OTCHNAME: TEdit;
+    ID_CART: TEdit;
+    EMAIL: TEdit;
+    TEL: TEdit;
+    OMS: TEdit;
+    GroupBox3: TGroupBox;
+    Label10: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
+    STREET: TEdit;
+    Building: TEdit;
+    APART: TEdit;
+    Date_Born: TDateTimePicker;
+    RadioGroup1: TRadioGroup;
+    DB: TIBDatabase;
+    IBTransaction: TIBTransaction;
+    DataSource: TDataSource;
+    PACIENT: TIBQuery;
+    Query: TIBQuery;
+    AddBtn: TButton;
+    Cancel: TButton;
+    procedure readdate();
+    procedure updates();
+    procedure refresh();
+    procedure FormCreate(Sender: TObject);
+    procedure CancelClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  NewPacient: TNewPacient;
+  data:array[0..12] of string;
+
+implementation
+
+{$R *.dfm}
+
+uses All;
+
+procedure TPacient.readdate;
+Begin
+   ID_PACIENT.Text:=PACIENT.FieldByName('ID_PACIENT').Value;
+   NAME.Text:=PACIENT.FieldByName('NAME').Value;
+   FNAME.Text:=PACIENT.FieldByName('FNAME').Value;
+   OtchNAME.Text:=PACIENT.FieldByName('OtchNAME').Value;
+   DATE_BORN.Date:=PACIENT.FieldByName('DATE_BORN').Value;
+   ID_CART.Text:=PACIENT.FieldByName('ID_CART').Value;
+   TEL.Text:=PACIENT.FieldByName('TEL').Value;
+   OMS.Text:=PACIENT.FieldByName('OMS').Value;
+   if varisnull(PACIENT.FieldByName('EMAIL').Value)then EMAIL.Text:='Не указан'
+   else EMAIL.Text:=PACIENT.FieldByName('EMAIL').Value;
+   STREET.Text:=PACIENT.FieldByName('STREET').Value;
+   BUILDING.Text:=PACIENT.FieldByName('BUILDING').Value;
+   APART.Text:=PACIENT.FieldByName('APART').Value;
+   if PACIENT.FieldByName('POL').Value='М' then Radiogroup1.itemindex:=0
+   else Radiogroup1.itemindex:=1;
+End;
+
+procedure TPacient.updates;
+begin
+  data[0]:=ID_PACIENT.Text;
+  data[1]:=FNAME.Text;
+  data[2]:=NAME.Text;
+  data[3]:=OtchNAME.Text;
+  data[4]:=dateTostr(DATE_BORN.date);
+  data[5]:=ID_CART.Text;
+  if EMAIL.Text='' then data[6]:='NULL'
+  else data[6]:=EMAIL.Text;
+  data[7]:=TEL.Text;
+  data[8]:=OMS.Text;
+  data[9]:=STREET.Text;
+  data[10]:=BUILDING.Text;
+  if Radiogroup1.itemindex=1 then   data[11]:='Ж'
+   else data[11]:='М';
+  data[12]:=APART.Text;
+End;
+
+procedure TPacient.refresh;
+Begin
+  With Pacient do
+  begin
+   SQL.clear;
+   SQL.Add('SELECT * FROM Pacient Order by ID_Pacient ASC');
+   open;
+  end;
+End;
+
+
+
+procedure TNewPacient.CancelClick(Sender: TObject);
+begin
+Close;
+free;
+end;
+
+procedure TNewPacient.FormCreate(Sender: TObject);
+begin
+Connection(DB,IBTransaction);
+refresh;
+readdate;
+end;
+
+end.

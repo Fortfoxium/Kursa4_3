@@ -1,0 +1,50 @@
+unit TableTalon;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, IBX.IBDatabase,
+  IBX.IBCustomDataSet, IBX.IBQuery, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFrmTABLETALON = class(TForm)
+    DBGrid1: TDBGrid;
+    DB: TIBDatabase;
+    DataSource: TDataSource;
+    Query: TIBQuery;
+    IBTransaction: TIBTransaction;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmTABLETALON: TFrmTABLETALON;
+
+implementation
+
+{$R *.dfm}
+ USES Ally;
+procedure TFrmTABLETALON.FormCreate(Sender: TObject);
+var
+i,widthGrid:integer;
+begin
+  widthGrid:=0;
+  Connection(DB,IBTransaction, query);
+    with query do
+      begin
+            sql.add('SELECT * FROM TALON Order by ID_TALON ASC');
+            open;
+    end;
+for i := 0 to dbgrid1.Columns.Count-1 do
+  begin
+    //grid1.Columns[i].Width:=7+dbgrid1.Canvas.TextWidth(Dbgrid1.Columns[i].Title.caption);
+    widthGrid:=widthgrid+dbgrid1.Columns[i].Width;
+  end;
+DBgrid1.width:=widthGrid+25;
+end;
+
+end.

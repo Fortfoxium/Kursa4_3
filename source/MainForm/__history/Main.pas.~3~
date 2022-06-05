@@ -1,0 +1,75 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Data.DB, IBX.IBDatabase,
+  IBX.IBTable, Vcl.Grids, Vcl.DBGrids, IBX.IBCustomDataSet, IBX.IBQuery,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.UI.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.VCLUI.Wait, FireDAC.Phys.IB,
+  FireDAC.Phys.IBDef, inifiles, sharemem;
+
+type
+  TMAINFORM = class(TForm)
+    MainMenu1: TMainMenu;
+    M2: TMenuItem;
+    Exit: TMenuItem;
+    NewUser: TMenuItem;
+    M1: TMenuItem;
+    Podcl: TMenuItem;
+    Otcl: TMenuItem;
+    Perepodcl: TMenuItem;
+    M4: TMenuItem;
+    N9: TMenuItem;
+    N11: TMenuItem;
+    N12: TMenuItem;
+    N13: TMenuItem;
+    N14: TMenuItem;
+    ZapDoctor: TMenuItem;
+    M3: TMenuItem;
+    Naprav: TMenuItem;
+    ZapPacient: TMenuItem;
+    Enter: TMenuItem;
+    procedure EnterClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure NewUserClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MAINFORM: TMAINFORM;
+
+implementation
+
+
+{$R *.dfm}
+
+
+
+procedure openEnter (Aowner :Tcomponent); external 'DLLUser.dll' ;
+//procedure openRegister (Aowner :Tcomponent); external 'DLLUser.dll' ;
+function keys ():byte; external 'DLLUser.dll' ;
+
+procedure TMAINFORM.EnterClick(Sender: TObject);
+begin
+openEnter(self) ; //
+end;
+
+procedure TMAINFORM.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+application.terminate;
+end;
+
+procedure TMAINFORM.NewUserClick(Sender: TObject);
+begin
+//openRegister(self) ; //
+end;
+
+end.

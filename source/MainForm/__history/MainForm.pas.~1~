@@ -1,0 +1,35 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Menus,
+  ShareMem;
+
+type
+  TMainfrm = class(TForm)
+    MainMenu1: TMainMenu;
+    Info: TMenuItem;
+  private
+
+  public
+
+  end;
+
+var
+  Mainfrm: TMainfrm;
+
+implementation
+
+{$R *.dfm}
+
+end.

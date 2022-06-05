@@ -1,0 +1,115 @@
+CREATE TABLE USERS(
+    ID_Us INTEGER NOT NULL,
+    Login varChar(12) NOT NULL,
+    Pass varChar(12) NOT NULL
+);
+commit;
+
+CREATE TABLE USLUGA(
+    ID_Med_Usl INTEGER NOT NULL,
+    Med_Usl VarChar(50) NOT NULL
+);
+commit;
+
+CREATE TABLE RASP(
+    ID_RASP INTEGER NOT NULL,
+    DAYS_START VarChar(11) NOT NULL,
+    DAYS_END VarChar(11) NOT NULL,
+    HOURS_START TIME NOT NULL,
+    HOURS_END TIME NOT NULL
+);
+commit; 
+
+CREATE TABLE DOCTOR (
+    ID_DOCTOR    INTEGER NOT NULL,
+    FName_Doc VarChar(30) NOT NULL,
+    Name_Doc VarChar(30) NOT NULL,
+    OtchName_Doc VarChar(30) NOT NULL,
+    ID_RASP INTEGER 
+);
+commit;
+
+CREATE TABLE CABINET(
+    Cab INTEGER NOT NULL,
+    Name_Cab  VarChar(40) NOT NULL,
+    ID_Doctor INTEGER,
+    ID_MED_USL integer
+);
+commit;
+    
+
+CREATE TABLE PACIENT (
+    ID_PACIENT INTEGER NOT NULL,
+    FName VarChar(30) NOT NULL,
+    Name VarChar(30) NOT NULL,
+    OtchName VarChar(30) NOT NULL,
+    Date_Born Date NOT NULL,
+    ID_Cart VarChar(5) NOT NULL,
+    EMail VarChar(30),
+    Tel VarChar(11) NOT NULL,
+    OMS VarChar(16) NOT NULL,
+    Street VarChar(30) NOT NULL,
+    Building VarChar(10) NOT NULL,
+    Pol VarChar(1) NOT NULL,
+    Apart VarChar(10) NOT NULL
+ 
+);
+commit;
+
+CREATE TABLE TALON (
+    ID_Talon     INTEGER NOT NULL,
+    DateZap    Date NOT NULL,
+    TimeZap   TIME NOT NULL,
+    DATATALON  TIMEstamp NOT NULL,
+    Cab INTEGER ,
+    ID_PACIENT    INTEGER 
+);
+commit;
+
+alter table USERS add primary key (ID_Us);
+commit;
+alter table USLUGA add primary key (ID_Med_Usl);
+commit;
+alter table CABINET add primary key (Cab);
+commit;
+alter table DOCTOR add primary key (ID_DOCTOR);
+commit;
+alter table PACIENT add primary key (ID_PACIENT);
+commit;
+alter table TALON add primary key (ID_Talon);
+commit;
+alter table RASP add primary key (ID_RASP);
+commit;
+
+ALTER TABLE talon ADD FOREIGN KEY (Cab ) REFERENCES CABINET (Cab );
+COMMIT;
+ALTER TABLE CABINET ADD FOREIGN KEY (ID_Doctor) REFERENCES DOCTOR (ID_Doctor);
+COMMIT;
+ALTER TABLE Cabinet ADD FOREIGN KEY (ID_Med_Usl) REFERENCES usluga (ID_Med_Usl);
+COMMIT;
+ALTER TABLE DOCTOR ADD FOREIGN KEY (ID_RASP) REFERENCES RASP (ID_RASP);
+COMMIT;
+ALTER TABLE talon ADD FOREIGN KEY (ID_PACIENT) REFERENCES pacient (ID_PACIENT);
+COMMIT;
+
+
+CREATE GENERATOR USERSgen;
+commit;
+
+CREATE GENERATOR CABINETgen;
+commit;
+
+CREATE GENERATOR DOCTORgen;
+commit;
+
+CREATE GENERATOR PACIENTgen;
+commit;
+
+CREATE GENERATOR TALONgen;
+commit;
+
+CREATE GENERATOR USLUGAgen;
+commit;
+
+CREATE GENERATOR RASPgen;
+commit;

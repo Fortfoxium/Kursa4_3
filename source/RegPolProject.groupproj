@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CDE49639-0A70-44A4-84E3-ADABEB6E40F1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Spravka\Spravka.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Otchet\Otchet.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MainForm\RegPol.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Otchets\Otchets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Table\Table.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Spravka">
+        <MSBuild Projects="Spravka\Spravka.dproj"/>
+    </Target>
+    <Target Name="Spravka:Clean">
+        <MSBuild Projects="Spravka\Spravka.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Spravka:Make">
+        <MSBuild Projects="Spravka\Spravka.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Otchet">
+        <MSBuild Projects="Otchet\Otchet.dproj"/>
+    </Target>
+    <Target Name="Otchet:Clean">
+        <MSBuild Projects="Otchet\Otchet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Otchet:Make">
+        <MSBuild Projects="Otchet\Otchet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RegPol">
+        <MSBuild Projects="MainForm\RegPol.dproj"/>
+    </Target>
+    <Target Name="RegPol:Clean">
+        <MSBuild Projects="MainForm\RegPol.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RegPol:Make">
+        <MSBuild Projects="MainForm\RegPol.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Otchets">
+        <MSBuild Projects="Otchets\Otchets.dproj"/>
+    </Target>
+    <Target Name="Otchets:Clean">
+        <MSBuild Projects="Otchets\Otchets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Otchets:Make">
+        <MSBuild Projects="Otchets\Otchets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Table">
+        <MSBuild Projects="Table\Table.dproj"/>
+    </Target>
+    <Target Name="Table:Clean">
+        <MSBuild Projects="Table\Table.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Table:Make">
+        <MSBuild Projects="Table\Table.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Spravka;Otchet;RegPol;Otchets;Table"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Spravka:Clean;Otchet:Clean;RegPol:Clean;Otchets:Clean;Table:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Spravka:Make;Otchet:Make;RegPol:Make;Otchets:Make;Table:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,62 @@
+object FrmTABLETALON: TFrmTABLETALON
+  Left = 0
+  Top = 0
+  Caption = 'FrmTABLETALON'
+  ClientHeight = 830
+  ClientWidth = 840
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OnCreate = FormCreate
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 2
+    Top = 4
+    Width = 847
+    Height = 821
+    BorderStyle = bsNone
+    DataSource = DataSource
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DB: TIBDatabase
+    DatabaseName = 'localhost/3051:D:\kp19is2\data\REGPOL.IB'
+    Params.Strings = (
+      'user_name=SYSDBA'
+      'password=masterkey'
+      'sql_role_name=dbo'
+      'lc_ctype=WIN1251')
+    LoginPrompt = False
+    DefaultTransaction = IBTransaction
+    ServerType = 'IBServer'
+    Left = 837
+    Top = 488
+  end
+  object DataSource: TDataSource
+    DataSet = Query
+    Left = 781
+    Top = 472
+  end
+  object Query: TIBQuery
+    Database = DB
+    Transaction = IBTransaction
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = False
+    PrecommittedReads = False
+    Left = 589
+    Top = 472
+  end
+  object IBTransaction: TIBTransaction
+    DefaultDatabase = DB
+    Left = 493
+    Top = 376
+  end
+end

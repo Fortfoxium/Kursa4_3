@@ -1,0 +1,18 @@
+program RegPol;
+
+uses
+  Vcl.Forms,
+  MainForm in 'MainForm\MainForm.pas' {Mainfrm},
+  Info in 'MainForm\Info.pas' {Infofrm},
+  DMofMain in 'MainForm\DMofMain.pas' {DM: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMainfrm, Mainfrm);
+  Application.CreateForm(TInfofrm, Infofrm);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.

@@ -1,0 +1,22 @@
+
+SELECT P.name AS "Имя пациента",P.Fname AS "Фамилия пациента",P.otchname AS "Отчество пациента",T.DateZap AS "Дата записи",T.timezap AS "Время записи", U.MED_USL AS "Предоставляемая услуга", D.fname_doc AS "Фамилия врача",D.name_doc AS "Имя врача", D.otchname_doc AS "Отчество врача"
+FROM TALON t, PACIENT P ,USLUGA u,doctor D, CABINET C
+WHERE
+(T.DateZap between '01.05.2022' and '15.05.2022')  and (T.id_pacient=P.id_pacient)
+and (T.id_med_usl=U.id_med_usl) and (T.cab=C.cab)  and (C.id_doctor=D.id_doctor);
+
+
+
+SELECT T.DateZap AS "Дата записи", T.timezap AS "Время записи", D.fname_doc AS "Фамилия врача",D.name_doc AS "Имя врача",
+D.days_pr AS "Дни приёма", d.hours_pr AS "Часы приёма", D.otchname_doc AS "Отчество врача", c.name_cab AS "Название кабинета"
+FROM TALON t,doctor D, CABINET C
+WHERE
+(c.name_cab like 'Кабинет 12%') and (T.cab=C.cab)  and (C.id_doctor=D.id_doctor);
+
+
+
+SELECT T.DateZap AS "Дата записи", T.timezap AS "Время записи", P.fname AS "Фамилия Пациента",P.name AS "Имя Пациента", P.otchname AS "Отчество пациента",
+D.fname_doc AS "Фамилия доктора", C.name_cab AS "Название кабинета"
+FROM TALON t,doctor D, CABINET C, PACIENT P
+WHERE
+(T.id_pacient=P.id_pacient) and (T.cab=C.cab)  and (C.id_doctor=D.id_doctor) and (P.name='Владислав') and (P.fname='Антипин');

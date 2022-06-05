@@ -1,0 +1,90 @@
+unit FrmRegister;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.IB,
+  FireDAC.Phys.IBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.Client, Data.DB,
+  FireDAC.Comp.DataSet, Vcl.StdCtrls, inifiles, IBX.IBCustomDataSet,
+  IBX.IBTable, IBX.IBDatabase, IBX.IBSQL, IBX.IBQuery, IBX.IBUpdateSQL;
+
+type
+  TReg = class(TForm)
+    Startbtn: TButton;
+    Editlogin: TEdit;
+    EditPassword: TEdit;
+    DB: TIBDatabase;
+    IBTransaction1: TIBTransaction;
+    UsersTable: TIBTable;
+    IBQuery: TIBQuery;
+    IBUpdateSQL1: TIBUpdateSQL;
+    procedure FormCreate(Sender: TObject);
+    procedure StartbtnClick(Sender: TObject);
+    procedure connection(DataB:TIBDatabase; Table:TIBTable; Trans:TIBTransaction);
+  private
+    { Private declarations }
+  public
+    Login:string;
+    Password:string;
+  end;
+
+var
+  Reg: TReg;
+ini:tinifile;
+implementation
+
+{$R *.dfm}
+
+procedure TReg.FormCreate(Sender: TObject);
+begin
+connection(DB,UsersTable,IBTransaction1);
+end;
+
+procedure TReg.connection(DataB:TIBDatabase; Table:TIBTable; Trans:TIBTransaction);
+begin
+ini:=tinifile.create(ExtractFilePath(Paramstr(0))+'CONFIG.INI');
+DataB.Databasename:=(ini.readstring('Connection','Path','Ошибка'));
+DataB.Params.Add('User_name=SYSDBA');
+DataB.Params.Add('password=masterkey');
+DataB.Params.Add('lc_ctype=WIN1251');
+DataB.Params.Add('sql_role_name=dbo');
+DataB.loginprompt:=false;
+DataB.DefaultTransaction:=Trans;
+DataB.Connected:=True;
+Table.Transaction:=Trans;
+Table.Database:=DataB;
+Table.TableName:='USERS';
+Table.Active:=True;
+Trans.defaultDatabase:=DataB;
+Trans.Active:=True;
+end;
+exports  connection;
+
+procedure TReg.StartbtnClick(Sender: TObject);
+begin
+
+if Length(EditLogin.text)=0 then showmessage('Поле логина пустое') else
+if Length(EditPassword.text)=0 then showmessage('Поле пароля пустое') else
+  begin
+    Login:=(EditLogin.text);
+    Password:=EditPassword.text;
+    IBQuery.SQL.Add('Select * from USERS');
+         IBQuery.SQL.Clear;
+    IBQuery.Locate('Login', Login, [loPartialKey]);
+     if not (Login = Userstable.FieldValues['Login']) then
+     begin
+     IBQuery.SQL.Add('INSERT INTO USERS VALUES (GEN_ID(USERSgen, 1), '+QuotedStr(login)+', '+QuotedStr(password)+');');
+     IBQuery.SQL.Clear;
+     IBQuery.SQL.Add('Select * from USERS');
+     IBUPDATESQL1.InsertSQL:=(IBQuery.SQL);
+     Showmessage('Вы создали нового пользователя: '+ Login);
+     end
+     else Showmessage('Такой логин уже существует!');
+  end;
+end;
+
+end.

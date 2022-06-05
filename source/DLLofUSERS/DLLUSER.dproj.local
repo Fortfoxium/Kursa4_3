@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.163,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Unit1.pas=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Register\FrmRegister.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.596,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Unit1.pas=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Login\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.964,=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.680,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Login\Unit1.pas=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.933,=D:\kp19is2\source\MainForm\MainFr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.596,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Unit1.dfm=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Login\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.163,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Unit1.dfm=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Register\FrmRegister.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.740,D:\kp19is2\source\DLLofUSERS\DLLUSER.dproj=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\DLLUSER.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.673,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\DLLUSER.dproj=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\DLLUSER.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.128,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\DLLUSER.dproj=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\DLLUSER.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.680,C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Login\Unit1.dfm=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Login\FrmLogin.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.169,=C:\Users\Владек\Desktop\kp19is2\source\DLLofUSERS\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.316,C:\Users\PC2\Documents\Embarcadero\Studio\Projects\DLLUSER.dproj=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.400,=D:\kp19is2\source\DLLofUSERS\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

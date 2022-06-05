@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.647,=F:\kp19is2\source\MainForm\MainFr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.553,=F:\kp19is2\source\MainForm\MainFr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.633,F:\kp19is2\source\MainForm\MainFr.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.648,=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.370,D:\kp19is2\source\Table\FrmPacient.dfm=D:\kp19is2\source\Table\Pacient\FrmPacient.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.760,=D:\kp19is2\source\Table\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.635,D:\kp19is2\source\Table\Unit3.pas=D:\kp19is2\source\Table\FrmPacient.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.370,D:\kp19is2\source\Table\FrmPacient.pas=D:\kp19is2\source\Table\Pacient\FrmPacient.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.510,=D:\kp19is2\source\Table\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,D:\kp19is2\source\Table\Unit2.pas=D:\kp19is2\source\Table\Usluga\FrmUsluga.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.584,=F:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.975,D:\kp19is2\source\Table\Table.dproj=C:\Users\PC2\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.245,=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.410,=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.589,=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.851,D:\kp19is2\source\Table\Unit1.pas=D:\kp19is2\source\Table\frmTable.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,D:\kp19is2\source\Table\frmRasp.dfm=D:\kp19is2\source\Table\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.230,=D:\kp19is2\source\Table\Unit5.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,D:\kp19is2\source\Table\Unit2.dfm=D:\kp19is2\source\Table\Usluga\FrmUsluga.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.522,D:\kp19is2\source\Table\Rasp\frmRasp.pas=D:\kp19is2\source\Table\frmRasp.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.243,D:\kp19is2\source\Table\Doctor\frmDoctor.dfm=D:\kp19is2\source\Table\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.851,D:\kp19is2\source\Table\Unit1.dfm=D:\kp19is2\source\Table\frmTable.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.939,D:\kp19is2\source\Table\All.pas=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.495,D:\kp19is2\source\Table\Unit4.dfm=D:\kp19is2\source\Table\Cabinet\Cabinet.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.800,D:\kp19is2\source\DLLofUSERS\Login\FrmLogin.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.243,D:\kp19is2\source\Table\Doctor\frmDoctor.pas=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.347,D:\kp19is2\source\MainForm\MainFr.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.522,D:\kp19is2\source\Table\Rasp\frmRasp.dfm=D:\kp19is2\source\Table\frmRasp.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,D:\kp19is2\source\Table\frmRasp.pas=D:\kp19is2\source\Table\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.979,=D:\kp19is2\source\Table\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.495,D:\kp19is2\source\Table\Unit4.pas=D:\kp19is2\source\Table\Cabinet\Cabinet.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.635,D:\kp19is2\source\Table\Unit3.dfm=D:\kp19is2\source\Table\FrmPacient.dfm</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Cabinet"/>
+    <File Path="Cabinet\Cabinet.pas"/>
+    <File Path="Cabinet\Cabinet.dfm"/>
+    <File Path="Doctor"/>
+    <File Path="Doctor\frmDoctor.pas"/>
+    <File Path="Doctor\frmDoctor.dfm"/>
+    <File Path="Pacient"/>
+    <File Path="Pacient\FrmPacient.pas"/>
+    <File Path="Pacient\FrmPacient.dfm"/>
+    <File Path="Rasp"/>
+    <File Path="Rasp\frmRasp.pas"/>
+    <File Path="Rasp\frmRasp.dfm"/>
+    <File Path="Usluga"/>
+    <File Path="Usluga\FrmUsluga.pas"/>
+    <File Path="Usluga\FrmUsluga.dfm"/>
+    <File Path="All.pas"/>
+    <File Path="frmTable.pas"/>
+    <File Path="frmTable.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

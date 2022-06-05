@@ -1,0 +1,30 @@
+object About: TAbout
+  Left = 0
+  Top = 0
+  Caption = 'About'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 88
+    Width = 175
+    Height = 19
+    Caption = #1057#1087#1088#1072#1074#1082#1072' '#1082' '#1087#1088#1086#1075#1088#1072#1084#1084#1077'->'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clHighlight
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    OnClick = Label1Click
+  end
+end

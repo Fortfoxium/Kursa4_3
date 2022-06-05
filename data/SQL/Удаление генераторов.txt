@@ -1,0 +1,17 @@
+DROP GENERATOR CABINETgen;
+commit;
+
+DROP GENERATOR DOCTORgen;
+commit;
+
+DROP GENERATOR PACIENTgen;
+commit;
+
+DROP GENERATOR PROJIVANIEgen;
+commit;
+
+DROP GENERATOR TALONgen;
+commit;
+
+DROP GENERATOR USLUGAgen;
+commit;

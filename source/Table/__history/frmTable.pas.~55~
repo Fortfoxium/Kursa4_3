@@ -1,0 +1,116 @@
+unit frmTable;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, IBX.IBCustomDataSet,
+  IBX.IBQuery, IBX.IBDatabase, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls;
+
+type
+  TFrTable = class(TForm)
+    DataSource: TDataSource;
+    DB: TIBDatabase;
+    IBTransaction: TIBTransaction;
+    Query: TIBQuery;
+    Scr: TScrollBox;
+    Label1: TLabel;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrTable: TFrTable;
+  key:integer;
+  Lab:array of tlabel;
+  LabName:array of tlabel;
+
+implementation
+
+{$R *.dfm}
+
+USES all;
+
+procedure TFrTable.FormCreate(Sender: TObject);
+var
+i,widthl:integer;    n,Stolb,w,Stroka, heightlabe:integer;
+begin
+  widthl:=20;
+  Connection(DB,IBTransaction, query);
+    with query do
+      begin
+          sql.clear;
+        case key of
+          1:
+          begin
+            sql.add('SELECT ID_MED_USL AS "Номер мед. Услуги", MED_USL AS "Название медицинской услуги" FROM USLUGA Order by ID_MED_USL ASC');
+            open;
+          end;
+          2:
+          begin
+            sql.add('SELECT ID_RASP AS "Номер расписания", DAYS_start AS "Дни начала работы", DAYS_end AS "Дни окончания работы", HOURS_end AS "Часы окончания работы", HOURS_start AS "Часы начала работы"  FROM RASP Order by ID_RASP ASC');
+            open;
+          end;
+          3:
+          begin
+            sql.add('SELECT * FROM PACIENT Order by ID_PACIENT ASC');
+            open;
+          end;
+          4:
+          begin
+            sql.add('SELECT ID_DOCTOR AS "Номер докторa", FNAME_DOC AS "Фамилия врача", NAME_DOc AS "Имя врача", OTChNAME_DOC AS "Отчество врача", ID_RASP AS "ID расписания" FROM DOCTOR Order by ID_DOCTOR ASC');
+            open;
+          end;
+          5:
+          begin
+            sql.add('SELECT C.CAB AS "Номер кабинета", C.NAME_CAB AS "Название кабинета", c.Id_doctor AS "ID врача", C.Id_med_usl AS "ID мед. услуги" FROM CABINET C Order by CAB ASC');
+            open;
+          end;
+    end;
+   n:=query.FieldCount;
+setlength(LabName,n);
+w:=20;
+for i:=0 to n-1 do
+ begin
+  LabName[i]:=TLabel.Create(Self);
+  with LabName[i] do
+   begin
+    Parent:=Scr;
+    Top:=20;
+    Height:=30;
+    Font.Name:='Curier New';
+    Font.Color:=clBlue;
+    Font.Style:=[fsBold];
+    Caption:=query.Fields[i].FieldName;
+    Left:=W;
+    w:=canvas.TextWidth(Caption)+w+35;
+    name:='labName'+inttostr(i);
+   end;
+ end;
+setlength(Lab,query.RecordCount*n);
+HeightLabe:=30;
+   for Stroka := 0 to query.RecordCount-1 do
+    HeightLabe:=HeightLabe+10;
+      for Stolb:=0 to n-1 do
+       begin
+        Lab[Stolb]:=TLabel.Create(Self);
+        with Lab[Stolb] do
+         begin
+          Parent:=Scr;
+          Top:=HeightLabe;
+          Left:=labname[Stolb].left;
+          Height:=30;
+          Font.Name:='Curier New';
+          Caption:=query.Fields[stolb].AsString;
+         end;
+       end;
+
+       query.Next;
+  end;
+              label1.Caption:=inttoStr(query.RecordCount);
+end;
+
+end.
